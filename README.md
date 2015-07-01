@@ -1,6 +1,6 @@
 # isotopcs
 
-## sublime
+## phpcs.sublime-settings
 
 ```javascript
 {
