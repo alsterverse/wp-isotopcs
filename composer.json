@@ -6,6 +6,14 @@
 		"standards",
 		"wordpress"
 	],
+  "authors": [
+    {
+      "name": "Fredrik Forsmo",
+      "email": "fredrik.forsmo@isotop.se",
+      "homepage": "https://github.com/frozzare",
+      "role": "Developer"
+    }
+  ],
 	"license": "MIT",
 	"require": {
 		"squizlabs/php_codesniffer": "^2.2.0",
