@@ -9,7 +9,7 @@ The coding standard used for WordPress sites.
 Standards are provided as a [Composer](http://getcomposer.org) package and can be installed with:
 
 ```bash
-composer create-project isotopsweden/isotopcs:dev-master --repository-url git@bitbucket.org:isotopsweden/isotopcs.git
+composer create-project isotopsweden/isotopcs:dev-master --repository-url http://composer.omg.isotop.ad
 ```
 
 Composer will automatically install dependencies, register standards paths, and set default PHP Code Sniffer standard to `Isotop`.
@@ -19,7 +19,7 @@ Composer will automatically install dependencies, register standards paths, and 
 To include standards as part of a project require them as development dependencies:
 
 ```bash
-composer require isotopsweden/isotopcs:dev-master --dev --repository-url git@bitbucket.org:isotopsweden/isotopcs.git
+composer require isotopsweden/isotopcs:dev-master --dev --repository-url http://composer.omg.isotop.ad
 ```
 
 ### Command line
