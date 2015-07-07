@@ -1,6 +1,6 @@
 {
-	"name": "frozzare/isotopcs",
-	"description": "PHP_CodeSniffer rules for Isotop projects",
+	"name": "isotopsweden/isotopcs",
+	"description": "Isotop WordPress coding standards",
 	"keywords": [
 		"phpcs",
 		"standards",
@@ -14,6 +14,9 @@
 	"conflict": {
 		"squizlabs/php_codesniffer": "2.3.1"
 	},
+  "support": {
+    "issues": "https://bitbucket.org/isotopsweden/isotopcs/issues"
+  },
 	"scripts": {
 		"config-set" : [
 			"\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs",
