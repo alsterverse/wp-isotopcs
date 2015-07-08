@@ -29,6 +29,18 @@ You should add Isotop composer repository to your composer config file.
 }
 ```
 
+Or use a `vcs` repository if you like to access it outside Isotops network.
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:isotopsweden/isotopcs.git"
+        }
+    ],
+}
+
 And you should update `minimum-stability` to `dev` and set `prefer-stable` to `true`.
 
 ```json
