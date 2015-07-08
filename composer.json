@@ -6,27 +6,24 @@
 		"standards",
 		"wordpress"
 	],
-  "authors": [
-    {
-      "name": "Fredrik Forsmo",
-      "email": "fredrik.forsmo@isotop.se",
-      "homepage": "https://github.com/frozzare",
-      "role": "Developer"
-    }
-  ],
+	"authors": [
+		{
+			"name": "Fredrik Forsmo",
+			"email": "fredrik.forsmo@isotop.se",
+			"homepage": "https://github.com/frozzare",
+			"role": "Developer"
+		}
+	],
 	"license": "MIT",
 	"require": {
 		"squizlabs/php_codesniffer": "^2.2.0",
 		"wp-coding-standards/wpcs": "dev-develop"
 	},
-	"conflict": {
-		"squizlabs/php_codesniffer": "2.3.1"
+	"support": {
+		"issues": "https://bitbucket.org/isotopsweden/isotopcs/issues"
 	},
-  "support": {
-    "issues": "https://bitbucket.org/isotopsweden/isotopcs/issues"
-  },
 	"scripts": {
-		"config-set" : [
+		"config-set": [
 			"\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs",
 			"\"vendor/bin/phpcs\" --config-set default_standard Isotop"
 		],
