@@ -16,10 +16,32 @@ Composer will automatically install dependencies, register standards paths, and 
 
 ### As dependency
 
-To include standards as part of a project require them as development dependencies:
+You should add Isotop composer repository to your composer config file.
+
+```json
+{
+    "repositories": [
+      {
+        "type": "composer",
+         "url": "http://composer.omg.isotop.ad"
+      }
+    ]
+}
+```
+
+And you should update `minimum-stability` to `dev` and set `prefer-stable` to `true`.
+
+```json
+{
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+```
+
+Then you can install `isotopcs` as a dependency.
 
 ```bash
-composer require isotopsweden/isotopcs:dev-master --dev --repository-url http://composer.omg.isotop.ad
+composer require isotopsweden/isotopcs:dev-master --dev
 ```
 
 ### Command line

@@ -29,5 +29,8 @@
 		],
 		"post-install-cmd": "composer config-set",
 		"post-update-cmd": "composer config-set"
+	},
+	"require-dev": {
+		"isotopsweden/isotopcs": "dev-master"
 	}
 }
