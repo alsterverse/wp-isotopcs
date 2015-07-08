@@ -40,6 +40,7 @@ Or use a `vcs` repository if you like to access it outside Isotops network.
         }
     ],
 }
+```
 
 And you should update `minimum-stability` to `dev` and set `prefer-stable` to `true`.
 
