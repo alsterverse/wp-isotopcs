@@ -47,7 +47,7 @@ composer require isotopsweden/isotopcs:dev-master --dev
 ### Command line
 
 ```bash
-"vendor/bin/phpcs" --extensions=php /path/to/folder/
+vendor/bin/phpcs --extensions=php /path/to/folder/
 ```
 
 ### Editors
