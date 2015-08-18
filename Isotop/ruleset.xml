@@ -28,10 +28,9 @@
 		</properties>
 	</rule>
 
-	<!-- Use tabs not spaces. -->
-	<rule ref="PEAR.Functions.FunctionCallSignature">
-		<properties>
-			<property name="tabIndent" value="true"/>
-		</properties>
+	<!-- Disable some error messages that we do not want -->
+	<rule ref="PEAR.Functions.FunctionCallSignature.Indent">
+		<severity>0</severity>
 	</rule>
+
 </ruleset>
