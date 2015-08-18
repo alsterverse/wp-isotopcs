@@ -28,4 +28,10 @@
 			<property name="requiredSpacesAfterOpen" value="1" />
 		</properties>
 	</rule>
+
+  <rule ref="PEAR.Functions.FunctionCallSignature">
+    <properties>
+      <property name="tabIndent" value="true"/>
+    </properties>
+  </rule>
 </ruleset>
