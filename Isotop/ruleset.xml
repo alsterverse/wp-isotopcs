@@ -2,6 +2,7 @@
 <ruleset name="WordPress-Isotop">
 	<description>Isotop rules for PHP_CodeSniffer</description>
 
+	<!-- Base rule is based on WordPress Extra. -->
 	<rule ref="WordPress-Extra">
 		<exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
 		<exclude name="WordPress.Arrays.ArrayDeclaration" />
@@ -15,7 +16,9 @@
 		<exclude name="WordPress.XSS.EscapeOutput" />
 	</rule>
 
+	<!-- Don't allow long array syntax. -->
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+
 	<rule ref="Squiz.WhiteSpace.OperatorSpacing" />
 	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
 		<properties>
@@ -25,9 +28,10 @@
 		</properties>
 	</rule>
 
-  <rule ref="PEAR.Functions.FunctionCallSignature">
-    <properties>
-      <property name="tabIndent" value="true"/>
-    </properties>
-  </rule>
+	<!-- Use tabs not spaces. -->
+	<rule ref="PEAR.Functions.FunctionCallSignature">
+		<properties>
+			<property name="tabIndent" value="true"/>
+		</properties>
+	</rule>
 </ruleset>
