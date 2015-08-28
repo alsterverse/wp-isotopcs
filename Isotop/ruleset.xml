@@ -6,14 +6,18 @@
 	<rule ref="WordPress-Extra">
 		<exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
 		<exclude name="WordPress.Arrays.ArrayDeclaration" />
-		<exclude name="WordPress.PHP.YodaConditions" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterStructureOpen" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeOpenParenthesis" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBetweenStructureColon" />
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis" />
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword" />
-		<exclude name="WordPress.XSS.EscapeOutput" />
+
+		<!-- We should probably want to turn the below rules on, but these give issues with the current code base. -->
+		<exclude name="WordPress.XSS.EscapeOutput" /><!-- This sniff also has known & reported bugs -->
+
+		<!-- Demanding Yoda conditions is stupid. -->
+		<exclude name="WordPress.PHP.YodaConditions" />
 	</rule>
 
 	<!-- Don't allow long array syntax. -->
