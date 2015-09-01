@@ -18,6 +18,9 @@
 		<!-- Example: "use Frozzare\Tank\Container" is not allowed and should be allowed -->
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
 
+		<!-- Prevent errors for space before open parenthesis. -->
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.SpaceBeforeClosureOpenParenthesis" />
+
 		<!-- Prevent errors for expected 1 space after closing parenthesis. -->
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis" />
 
