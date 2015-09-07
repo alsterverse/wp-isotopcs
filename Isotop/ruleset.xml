@@ -24,6 +24,9 @@
 		<!-- Prevent errors for expected 1 space after closing parenthesis. -->
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis" />
 
+		<!-- Allow blank line after end of control structure spacing. -->
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.BlankLineAfterEnd" />
+
 		<!-- Prevent errors for Spaces after closing braces, as we want a newline -->
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 
