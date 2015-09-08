@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4c2474bcaf4ffbd26daf63d5762cd16b",
+    "hash": "69a80153975798946371c78731315124",
     "packages": [
         {
             "name": "squizlabs/php_codesniffer",
@@ -121,8 +121,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wp-coding-standards/wpcs": 20,
-        "isotopsweden/isotopcs": 20
+        "wp-coding-standards/wpcs": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -1,6 +1,6 @@
 <?php xml version="1.0"?>
-<ruleset name="WordPress-Isotop">
-	<description>Isotop rules for PHP_CodeSniffer</description>
+<ruleset name="Isotop">
+	<description>Isotop WordPress coding standard</description>
 
 	<!-- Base rule is based on WordPress Extra. -->
 	<rule ref="WordPress-Extra">
@@ -36,6 +36,9 @@
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions" />
 	</rule>
+
+	<!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
+	<rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
 
 	<!-- Don't allow long array syntax. -->
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
