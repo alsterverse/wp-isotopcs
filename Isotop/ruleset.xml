@@ -58,8 +58,8 @@
 		<!-- File comment should not be required. -->
 		<exclude name="Squiz.Commenting.FileComment.Missing" />
 
-		<!-- Maybe required? -->
-		<eexclude name="Squiz.Commenting.ClassComment.Missing" />
+		<!-- Maybe we should exclude this or not? -->
+		<!-- <exclude name="Squiz.Commenting.ClassComment.Missing" /> -->
 
 		<!-- No line between comment and code is required. -->
 		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore" />
