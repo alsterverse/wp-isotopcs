@@ -52,23 +52,23 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 		$tokens = $phpcsFile->getTokens();
 
 		if ( $tokens[( $stackPtr + 1 )]['code'] !== T_WHITESPACE
-    	&& ! ( $tokens[$stackPtr]['code'] === T_ELSE && $tokens[( $stackPtr + 1 )]['code'] === T_COLON )
-      && ! ( T_CLOSURE === $tokens[ $stackPtr ]['code'] && 0 === (int) $this->spaces_before_closure_open_paren )
-    ) {
-    	$error = 'Space after opening control structure is required';
+			&& ! ( $tokens[$stackPtr]['code'] === T_ELSE && $tokens[( $stackPtr + 1 )]['code'] === T_COLON )
+			&& ! ( T_CLOSURE === $tokens[ $stackPtr ]['code'] && 0 === (int) $this->spaces_before_closure_open_paren )
+		) {
+			$error = 'Space after opening control structure is required';
 
 			if ( isset( $phpcsFile->fixer ) === true ) {
-      	$fix = $phpcsFile->addFixableError( $error, $stackPtr, 'NoSpaceAfterStructureOpen' );
+				$fix = $phpcsFile->addFixableError( $error, $stackPtr, 'NoSpaceAfterStructureOpen' );
 
-			  if ( $fix === true ) {
-        	$phpcsFile->fixer->beginChangeset();
-          $phpcsFile->fixer->addContent( $stackPtr, ' ' );
-          $phpcsFile->fixer->endChangeset();
-        }
-      } else {
-    		$phpcsFile->addError( $error, $stackPtr, 'NoSpaceAfterStructureOpen' );
-      }
-    }
+				if ( $fix === true ) {
+					$phpcsFile->fixer->beginChangeset();
+					$phpcsFile->fixer->addContent( $stackPtr, ' ' );
+					$phpcsFile->fixer->endChangeset();
+				}
+			} else {
+				$phpcsFile->addError( $error, $stackPtr, 'NoSpaceAfterStructureOpen' );
+			}
+		}
 
 		if ( isset( $tokens[ $stackPtr ]['scope_closer'] ) === false ) {
 			if ( T_USE === $tokens[ $stackPtr ]['code'] && 'closure' === $this->get_use_type( $stackPtr ) ) {
