@@ -96,7 +96,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 		$firstContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeOpener + 1 ), null, true );
 
 		if ( $tokens[$firstContent-7]['code'] === T_CLASS && $tokens[$firstContent-3]['code'] === T_OPEN_CURLY_BRACKET ) {
-			$error = 'No blank line found at start of control structure';
+			$error = 'No blank line found at start of control structure. One blank line is required.';
 
 			if ( isset( $phpcsFile->fixer ) === true ) {
 				$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
@@ -116,8 +116,10 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 			}
 		}
 
-		if ( $tokens[$firstContent-2]['line'] !== $tokens[$firstContent-4]['line'] ) {
-			$error = 'Two blank line or more found at start of control structure';
+		if ( $tokens[$firstContent-8]['code'] !== T_CLASS
+			&& $tokens[$firstContent-2]['line'] !== $tokens[$firstContent-4]['line']
+		) {
+			$error = 'Two blank line or more found at start of control structure. One blank line is required.';
 
 			if ( isset( $phpcsFile->fixer ) === true ) {
 				$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
@@ -188,7 +190,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 
 			if ( $tokens[$scopeCloser]['code'] === $tokens[$scopeCloser + 2]['code'] ) {
 				// TODO: Won't cover following case: "} echo 'OK';".
-				$error = 'No blank line found after control structure. One blank line should exist.';
+				$error = 'No blank line found after control structure. One blank line is required.';
 
 				if ( isset( $phpcsFile->fixer ) === true ) {
 					$fix = $phpcsFile->addFixableError( $error, $scopeCloser, 'NoBlankLineAfterEnd' );
@@ -213,7 +215,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 				&& $tokens[$trailingContent]['line'] != ( $tokens[$scopeCloser]['line'] + 2 )
 			) {
 				// TODO: Won't cover following case: "} echo 'OK';".
-				$error = 'Two blank line or more found after control structure';
+				$error = 'Two blank line or more found after control structure. One blank line is required.';
 
 				if ( isset( $phpcsFile->fixer ) === true ) {
 					$fix = $phpcsFile->addFixableError( $error, $scopeCloser, 'MoreThenOneBlankLineAfterEnd' );
