@@ -199,7 +199,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 					if ( $fix === true ) {
 						$phpcsFile->fixer->beginChangeset();
 
-						for ( $i = ( $scopeCloser + 1 ); $i < $trailingContent; $i++ ) {
+						for ( $i = ( $scopeCloser + 2 ); $i < $trailingContent; $i++ ) {
 							$phpcsFile->fixer->replaceToken( $i, '' );
 						}
 
