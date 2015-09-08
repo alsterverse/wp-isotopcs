@@ -93,6 +93,29 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 			$scopeCloser = $tokens[ $stackPtr ]['scope_closer'];
 		}
 
+		$firstContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeOpener + 1 ), null, true );
+
+		if ( $tokens[$firstContent-7]['code'] === T_CLASS && $tokens[$firstContent-3]['code'] === T_OPEN_CURLY_BRACKET ) {
+			$error = 'No blank line found at start of control structure';
+
+			if ( isset( $phpcsFile->fixer ) === true ) {
+				$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
+
+				if ( $fix === true ) {
+					$phpcsFile->fixer->beginChangeset();
+
+					for ( $i = ( $scopeOpener + 2 ); $i < $firstContent; $i++ ) {
+						$phpcsFile->fixer->replaceToken( $i, '' );
+					}
+
+					$phpcsFile->fixer->addNewline( $scopeOpener );
+					$phpcsFile->fixer->endChangeset();
+				}
+			} else {
+				$phpcsFile->addError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
+			}
+		}
+
 		/*
 
 		$parenthesisOpener = $phpcsFile->findNext( PHP_CodeSniffer_Tokens::$emptyTokens, ( $stackPtr + 1 ), null, true );
