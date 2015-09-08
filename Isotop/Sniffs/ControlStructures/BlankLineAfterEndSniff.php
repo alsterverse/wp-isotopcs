@@ -116,6 +116,27 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 			}
 		}
 
+		if ( $tokens[$firstContent-2]['line'] !== $tokens[$firstContent-4]['line'] ) {
+			$error = 'Two blank line or more found at start of control structure';
+
+			if ( isset( $phpcsFile->fixer ) === true ) {
+				$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
+
+				if ( $fix === true ) {
+					$phpcsFile->fixer->beginChangeset();
+
+					for ( $i = ( $scopeOpener + 2 ); $i < $firstContent; $i++ ) {
+						$phpcsFile->fixer->replaceToken( $i, '' );
+					}
+
+					$phpcsFile->fixer->addNewline( $scopeOpener );
+					$phpcsFile->fixer->endChangeset();
+				}
+			} else {
+				$phpcsFile->addError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
+			}
+		}
+
 		$trailingContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeCloser + 1 ), null, true );
 
 		if ( $tokens[$trailingContent]['code'] === T_ELSE ) {
@@ -192,7 +213,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 				&& $tokens[$trailingContent]['line'] != ( $tokens[$scopeCloser]['line'] + 2 )
 			) {
 				// TODO: Won't cover following case: "} echo 'OK';".
-				$error = 'Two blank line found after control structure';
+				$error = 'Two blank line or more found after control structure';
 
 				if ( isset( $phpcsFile->fixer ) === true ) {
 					$fix = $phpcsFile->addFixableError( $error, $scopeCloser, 'MoreThenOneBlankLineAfterEnd' );
