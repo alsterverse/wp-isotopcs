@@ -21,6 +21,17 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 	public $supportedTokenizers = ['PHP'];
 
 	/**
+	 * How many spaces should be between a T_CLOSURE and T_OPEN_PARENTHESIS.
+	 *
+	 * function[*]() {...}
+	 *
+	 * @since 0.7.0
+	 *
+	 * @var int
+	 */
+	public $spaces_before_closure_open_paren = 0;
+
+	/**
 	 * Returns an array of tokens this test wants to listen for.
 	 *
 	 * @return array
