@@ -94,48 +94,88 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 		}
 
 		$firstContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeOpener + 1 ), null, true );
+		$y = $tokens[$scopeOpener];
+		$class_line = array_values( array_filter( array_filter( $tokens, function ( $x ) use( $y ) {
+			return $x['line'] === $y['line'];
+		} ), function ( $x ) {
+			return $x['code'] === T_CLASS;
+		} ) );
 
-		if ( $tokens[$firstContent-7]['code'] === T_CLASS && $tokens[$firstContent-3]['code'] === T_OPEN_CURLY_BRACKET ) {
-			$error = 'No blank line found at start of control structure. One blank line is required.';
+		if ( count( $class_line ) > 0 ) {
+			$next_line = array_filter( $tokens, function ( $x ) use( $class_line ) {
+				return $x['line'] === $class_line[0]['line'] + 1;
+			} );
 
-			if ( isset( $phpcsFile->fixer ) === true ) {
-				$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
+			if ( count( $next_line ) > 0 ) {
+				$whitespace = array_filter( $next_line, function ( $x ) {
+					return $x['code'] === T_WHITESPACE;
+				} );
 
-				if ( $fix === true ) {
-					$phpcsFile->fixer->beginChangeset();
+				$whitespace = count( $whitespace ) < count( $next_line );
 
-					for ( $i = ( $scopeOpener + 2 ); $i < $firstContent; $i++ ) {
-						$phpcsFile->fixer->replaceToken( $i, '' );
+				if ( $whitespace
+					&& $tokens[$scopeOpener]['code'] === T_OPEN_CURLY_BRACKET
+					&& ! isset( $tokens[$firstContent]['nested_parenthesis'] )
+					&& $tokens[$firstContent]['level'] === 1
+				) {
+					$error = 'No blank line found at start of control structure';
+
+					if ( isset( $phpcsFile->fixer ) === true ) {
+						$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
+
+						if ( $fix === true ) {
+							$phpcsFile->fixer->beginChangeset();
+
+							for ( $i = ( $scopeOpener + 2 ); $i < $firstContent; $i++ ) {
+								$phpcsFile->fixer->replaceToken( $i, '' );
+							}
+
+							$phpcsFile->fixer->addNewline( $scopeOpener );
+							$phpcsFile->fixer->endChangeset();
+						}
+					} else {
+						$phpcsFile->addError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
 					}
-
-					$phpcsFile->fixer->addNewline( $scopeOpener );
-					$phpcsFile->fixer->endChangeset();
 				}
-			} else {
-				$phpcsFile->addError( $error, $scopeOpener, 'NoBlankLineAfterStart' );
-			}
-		}
 
-		if ( $tokens[$firstContent-8]['code'] !== T_CLASS
-			&& $tokens[$firstContent-2]['line'] !== $tokens[$firstContent-4]['line']
-		) {
-			$error = 'Two blank line or more found at start of control structure. One blank line is required.';
+				$next_line = array_values( $next_line );
 
-			if ( isset( $phpcsFile->fixer ) === true ) {
-				$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
+				$next_next_line = array_filter( $tokens, function ( $x ) use ( $next_line ) {
+					return $x['line'] === $next_line[0]['line'] + 1;
+				} );
 
-				if ( $fix === true ) {
-					$phpcsFile->fixer->beginChangeset();
+				if ( count( $next_next_line )  > 0 ) {
+					$next_whitespace = array_filter( $next_next_line, function ( $x ) {
+						return $x['code'] === T_WHITESPACE;
+					} );
 
-					for ( $i = ( $scopeOpener + 2 ); $i < $firstContent; $i++ ) {
-						$phpcsFile->fixer->replaceToken( $i, '' );
+					$next_whitespace = count( $next_next_line ) === count( $next_whitespace );
+
+					if ( $next_whitespace
+						&& $tokens[$scopeOpener]['code'] === T_OPEN_CURLY_BRACKET
+						&& ! isset( $tokens[$firstContent]['nested_parenthesis'] )
+						&& $tokens[$firstContent]['level'] === 1
+					) {
+						$error = 'More then one blank line found at start of control structure';
+
+						if ( isset( $phpcsFile->fixer ) === true ) {
+							$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
+
+							if ( $fix === true ) {
+								$phpcsFile->fixer->beginChangeset();
+
+								for ( $i = ( $scopeOpener + 2 ); $i < $firstContent; $i++ ) {
+									$phpcsFile->fixer->replaceToken( $i, '' );
+								}
+
+								$phpcsFile->fixer->addNewline( $scopeOpener );
+								$phpcsFile->fixer->endChangeset();
+							}
+						} else {
+							$phpcsFile->addError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
+						}
 					}
-
-					$phpcsFile->fixer->addNewline( $scopeOpener );
-					$phpcsFile->fixer->endChangeset();
 				}
-			} else {
-				$phpcsFile->addError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
 			}
 		}
 
@@ -190,7 +230,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 
 			if ( $tokens[$scopeCloser]['code'] === $tokens[$scopeCloser + 2]['code'] ) {
 				// TODO: Won't cover following case: "} echo 'OK';".
-				$error = 'No blank line found after control structure. One blank line is required.';
+				$error = 'No blank line found after control structure. One blank line should exist.';
 
 				if ( isset( $phpcsFile->fixer ) === true ) {
 					$fix = $phpcsFile->addFixableError( $error, $scopeCloser, 'NoBlankLineAfterEnd' );
@@ -215,7 +255,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 				&& $tokens[$trailingContent]['line'] != ( $tokens[$scopeCloser]['line'] + 2 )
 			) {
 				// TODO: Won't cover following case: "} echo 'OK';".
-				$error = 'Two blank line or more found after control structure. One blank line is required.';
+				$error = 'Two blank line found after control structure';
 
 				if ( isset( $phpcsFile->fixer ) === true ) {
 					$fix = $phpcsFile->addFixableError( $error, $scopeCloser, 'MoreThenOneBlankLineAfterEnd' );
