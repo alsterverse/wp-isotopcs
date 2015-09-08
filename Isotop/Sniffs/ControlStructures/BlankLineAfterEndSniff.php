@@ -94,21 +94,21 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 		}
 
 		$firstContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeOpener + 1 ), null, true );
-		$y = $tokens[$scopeOpener];
-		$class_line = array_values( array_filter( array_filter( $tokens, function ( $x ) use( $y ) {
-			return $x['line'] === $y['line'];
-		} ), function ( $x ) {
-			return $x['code'] === T_CLASS;
+		$currentToken = $tokens[$scopeOpener];
+		$class_line = array_values( array_filter( array_filter( $tokens, function ( $token ) use( $currentToken ) {
+			return $token['line'] === $currentToken['line'];
+		} ), function ( $token ) {
+			return $token['code'] === T_CLASS;
 		} ) );
 
 		if ( count( $class_line ) > 0 ) {
-			$next_line = array_filter( $tokens, function ( $x ) use( $class_line ) {
-				return $x['line'] === $class_line[0]['line'] + 1;
+			$next_line = array_filter( $tokens, function ( $token ) use( $class_line ) {
+				return $token['line'] === $class_line[0]['line'] + 1;
 			} );
 
 			if ( count( $next_line ) > 0 ) {
-				$whitespace = array_filter( $next_line, function ( $x ) {
-					return $x['code'] === T_WHITESPACE;
+				$whitespace = array_filter( $next_line, function ( $token ) {
+					return $token['code'] === T_WHITESPACE;
 				} );
 
 				$whitespace = count( $whitespace ) < count( $next_line );
@@ -140,13 +140,13 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 
 				$next_line = array_values( $next_line );
 
-				$next_next_line = array_filter( $tokens, function ( $x ) use ( $next_line ) {
-					return $x['line'] === $next_line[0]['line'] + 1;
+				$next_next_line = array_filter( $tokens, function ( $token ) use ( $next_line ) {
+					return $token['line'] === $next_line[0]['line'] + 1;
 				} );
 
 				if ( count( $next_next_line )  > 0 ) {
-					$next_whitespace = array_filter( $next_next_line, function ( $x ) {
-						return $x['code'] === T_WHITESPACE;
+					$next_whitespace = array_filter( $next_next_line, function ( $token ) {
+						return $token['code'] === T_WHITESPACE;
 					} );
 
 					$next_whitespace = count( $next_next_line ) === count( $next_whitespace );
