@@ -3,10 +3,7 @@
 /**
  * Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff.
  *
- * Verifies that new lines after end is only two.
- *
- * Credit
- * https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/blob/master/WordPress/Sniffs/WhiteSpace/ControlStructureSpacingSniff.php
+ * Verifies that new lines after start and end is only one.
  *
  * @author Fredrik Forsmo <fredrik.forsmo@isotop.se>
  */
