@@ -21,6 +21,9 @@
 		<!-- Prevent errors for space before open parenthesis. -->
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.SpaceBeforeClosureOpenParenthesis" />
 
+		<!-- Prevent errors for expected 1 space after keywords -->
+		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword" />
+
 		<!-- Prevent errors for expected 1 space after closing parenthesis. -->
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis" />
 
