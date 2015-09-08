@@ -54,4 +54,18 @@
 		<severity>0</severity>
 	</rule>
 
+	<rule ref="WordPress-Docs">
+		<!-- File comment should not be required. -->
+		<exclude name="Squiz.Commenting.FileComment.Missing" />
+
+		<!-- Maybe required? -->
+		<eexclude name="Squiz.Commenting.ClassComment.Missing" />
+
+		<!-- No line between comment and code is required. -->
+		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore" />
+
+		<!-- Catches way too many things, like vars and file headers. -->
+		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+	</rule>
+
 </ruleset>
