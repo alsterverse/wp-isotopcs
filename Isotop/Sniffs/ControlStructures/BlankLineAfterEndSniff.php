@@ -116,39 +116,6 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 			}
 		}
 
-		/*
-
-		$parenthesisOpener = $phpcsFile->findNext( PHP_CodeSniffer_Tokens::$emptyTokens, ( $stackPtr + 1 ), null, true );
-
-		$firstContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeOpener + 1 ), null, true );
-
-		if ( $tokens[$firstContent]['code'] === T_DOC_COMMENT_OPEN_TAG ) {
-			if ( $tokens[$firstContent]['line'] > ( $tokens[$scopeOpener]['line'] - 1 )
-				&& $tokens[$firstContent]['line'] > ( $tokens[$scopeOpener]['line'] - 2 )
-			) {
-				$error = 'Blank line found at start of control structure';
-
-				if ( isset( $phpcsFile->fixer ) === true ) {
-					$fix = $phpcsFile->addFixableError( $error, $scopeOpener, 'MoreThenOneBlankLineAfterStart' );
-
-					if ( $fix === true ) {
-						$phpcsFile->fixer->beginChangeset();
-
-						for ( $i = ( $scopeOpener + 1 ); $i < $firstContent; $i++ ) {
-							$phpcsFile->fixer->replaceToken( $i, '' );
-						}
-
-						$phpcsFile->fixer->addNewline( $scopeOpener );
-						$phpcsFile->fixer->endChangeset();
-					}
-				} else {
-					$phpcsFile->addError( $error, $scopeOpener, 'BlankLineAfterStart' );
-				}
-			}
-		}
-
-		*/
-
 		$trailingContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeCloser + 1 ), null, true );
 
 		if ( $tokens[$trailingContent]['code'] === T_ELSE ) {
