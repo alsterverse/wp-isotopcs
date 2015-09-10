@@ -79,7 +79,7 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 		}
 
 		if ( isset( $tokens[ $stackPtr ]['scope_closer'] ) === false ) {
-			if ( T_USE === $tokens[ $stackPtr ]['code'] && 'closure' === $this->get_use_type( $stackPtr ) ) {
+			if ( T_USE === $tokens[ $stackPtr ]['code'] ) {
 				$scopeOpener = $phpcsFile->findNext( T_OPEN_CURLY_BRACKET, $stackPtr + 1 );
 				$scopeCloser = $tokens[ $scopeOpener ]['scope_closer'];
 			} else {
