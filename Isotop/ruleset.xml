@@ -66,6 +66,9 @@
 
 		<!-- Catches way too many things, like vars and file headers. -->
 		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+
+		<!-- Allow comments without ending period. -->
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
 	</rule>
 
 </ruleset>
