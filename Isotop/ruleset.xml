@@ -61,8 +61,8 @@
 		<!-- Package should not be required. -->
 		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
 
-		<!-- Maybe we should exclude this or not? -->
-		<!-- <exclude name="Squiz.Commenting.ClassComment.Missing" /> -->
+		<!-- Conflicts with ClassComment if enabled -->
+		<exclude name="Squiz.Squiz.Commenting.FileComment.SpacingAfterComment" />
 
 		<!-- No line between comment and code is required. -->
 		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore" />
