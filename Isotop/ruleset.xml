@@ -72,6 +72,12 @@
 
 		<!-- Allow comments without ending period. -->
 		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+
+		<!-- Allow blank line after a inline comment. -->
+		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
+
+		<!-- Comment should not be required in param. -->
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
 	</rule>
 
 </ruleset>
