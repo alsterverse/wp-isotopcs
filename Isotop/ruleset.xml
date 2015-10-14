@@ -64,6 +64,9 @@
 		<!-- Conflicts with ClassComment if enabled -->
 		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
 
+		<!-- Exclude spacing after open since we don't require file comments -->
+		<exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen" />
+
 		<!-- No line between comment and code is required. -->
 		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore" />
 
