@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.3.4",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "11a2545c44a5915f883e2e5ec12e14ed345e3ab2"
+                "reference": "32a879f4f35019d78d568db2885d7779ca084a33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/11a2545c44a5915f883e2e5ec12e14ed345e3ab2",
-                "reference": "11a2545c44a5915f883e2e5ec12e14ed345e3ab2",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/32a879f4f35019d78d568db2885d7779ca084a33",
+                "reference": "32a879f4f35019d78d568db2885d7779ca084a33",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +79,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2015-09-09 00:18:50"
+            "time": "2015-11-23 21:30:59"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -87,12 +87,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-                "reference": "ba459589fcca73285cf1fb14edc9b1d4fe9a1cec"
+                "reference": "fa2ff4b2fac13976af3f122df2ba7263adf96883"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/ba459589fcca73285cf1fb14edc9b1d4fe9a1cec",
-                "reference": "ba459589fcca73285cf1fb14edc9b1d4fe9a1cec",
+                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/fa2ff4b2fac13976af3f122df2ba7263adf96883",
+                "reference": "fa2ff4b2fac13976af3f122df2ba7263adf96883",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2015-11-03 12:54:53"
+            "time": "2015-11-17 05:31:50"
         }
     ],
     "packages-dev": [],
