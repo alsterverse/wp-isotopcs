@@ -4,6 +4,9 @@
 
 	<!-- Base rule is based on WordPress Extra. -->
 	<rule ref="WordPress-Extra">
+		<!-- Allow empty lines that can make the code beautify -->
+		<exclude name="PEAR.Functions.FunctionCallSignature.EmptyLine" />
+
 		<!-- Demanding space in array declaration is stupid. -->
 		<exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
 		<exclude name="WordPress.Arrays.ArrayDeclaration" />
