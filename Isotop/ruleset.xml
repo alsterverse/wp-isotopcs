@@ -41,6 +41,9 @@
 
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions" />
+
+		<!-- Using elseif is not nice or mix WPCS and PSR2. -->
+		<exclude name="PSR2" /><!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/544 -->
 	</rule>
 
 	<!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
