@@ -9,19 +9,20 @@
     "packages": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.5.1",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8"
+                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1bcdf03b068a530ac1962ce671dead356eeba43b",
+                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b",
                 "shasum": ""
             },
             "require": {
+                "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
                 "php": ">=5.1.2"
@@ -82,7 +83,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-01-19 23:39:10"
+            "time": "2016-04-03 22:58:34"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -90,12 +91,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-                "reference": "abc08ac59f4aa2c63784a1bb393aaed5128408dc"
+                "reference": "2f4bc3d1c3d73b3bf16140160cf70e7e9e3c77c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/abc08ac59f4aa2c63784a1bb393aaed5128408dc",
-                "reference": "abc08ac59f4aa2c63784a1bb393aaed5128408dc",
+                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/2f4bc3d1c3d73b3bf16140160cf70e7e9e3c77c2",
+                "reference": "2f4bc3d1c3d73b3bf16140160cf70e7e9e3c77c2",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +119,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2016-02-10 22:42:48"
+            "time": "2016-04-07 12:39:13"
         }
     ],
     "packages-dev": [],
