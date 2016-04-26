@@ -20,7 +20,7 @@
 		"wp-coding-standards/wpcs": "dev-develop"
 	},
 	"support": {
-		"issues": "https://bitbucket.org/isotopsweden/isotopcs/issues"
+		"issues": "https://jira.isotop.se/browse/IS"
 	},
 	"scripts": {
 		"config-set": [
