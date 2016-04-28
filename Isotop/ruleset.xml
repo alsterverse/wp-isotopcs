@@ -59,6 +59,9 @@
 		<!-- File comment should not be required. -->
 		<exclude name="Squiz.Commenting.FileComment.Missing" />
 
+		<!-- Class comment should not be required. -->
+		<exclude name="Squiz.Commenting.ClassComment.Missing" />
+
 		<!-- Package should not be required. -->
 		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
 
