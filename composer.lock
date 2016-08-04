@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d3c68d929d8698594914b583c2645f52",
+    "hash": "9da0c154530bc0601faa2cbe62ab5855",
     "content-hash": "908af959a0c2c2d2225cb37fb7db343f",
     "packages": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "fb72ed32f8418db5e7770be1653e62e0d6f5dd3d"
+                "reference": "4edb770cb853def6e60c93abb088ad5ac2010c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/fb72ed32f8418db5e7770be1653e62e0d6f5dd3d",
-                "reference": "fb72ed32f8418db5e7770be1653e62e0d6f5dd3d",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/4edb770cb853def6e60c93abb088ad5ac2010c83",
+                "reference": "4edb770cb853def6e60c93abb088ad5ac2010c83",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-05-30 22:24:32"
+            "time": "2016-07-13 23:29:13"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -91,16 +91,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-                "reference": "15460b4af86bb59fb15c8467cde68882452030c0"
+                "reference": "193948062799deb133f4a566f1206eed5d5adcf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/15460b4af86bb59fb15c8467cde68882452030c0",
-                "reference": "15460b4af86bb59fb15c8467cde68882452030c0",
+                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/193948062799deb133f4a566f1206eed5d5adcf9",
+                "reference": "193948062799deb133f4a566f1206eed5d5adcf9",
                 "shasum": ""
             },
             "require": {
-                "squizlabs/php_codesniffer": "~2.2"
+                "squizlabs/php_codesniffer": "^2.6"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -119,7 +119,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2016-06-28 13:07:41"
+            "time": "2016-08-01 20:37:54"
         }
     ],
     "packages-dev": [],
