@@ -1,33 +1,30 @@
 {
-	"name": "isotopsweden/isotopcs",
-	"description": "Isotop WordPress Coding Standard",
-	"keywords": [
-		"phpcs",
-		"standards",
-		"wordpress"
-	],
-	"authors": [
-		{
-			"name": "Fredrik Forsmo",
-			"email": "fredrik.forsmo@isotop.se",
-			"homepage": "https://github.com/frozzare",
-			"role": "Developer"
-		}
-	],
-	"license": "MIT",
-	"require": {
-		"squizlabs/php_codesniffer": "~2.0",
-		"wp-coding-standards/wpcs": "dev-develop"
-	},
-	"support": {
-		"issues": "https://jira.isotop.se/browse/IS"
-	},
-	"scripts": {
-		"config-set": [
-			"\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs",
-			"\"vendor/bin/phpcs\" --config-set default_standard Isotop"
-		],
-		"post-install-cmd": "composer config-set",
-		"post-update-cmd": "composer config-set"
-	}
+  "name": "isotopsweden/isotopcs",
+  "description": "Isotop WordPress Coding Standard",
+  "keywords": [
+    "phpcs",
+    "standards",
+    "wordpress"
+  ],
+  "authors": [
+    {
+      "name": "Fredrik Forsmo",
+      "email": "fredrik.forsmo@isotop.se",
+      "homepage": "https://github.com/frozzare",
+      "role": "Developer"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "squizlabs/php_codesniffer": "~2.0",
+    "wp-coding-standards/wpcs": "dev-develop"
+  },
+  "scripts": {
+    "config-set": [
+      "\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs",
+      "\"vendor/bin/phpcs\" --config-set default_standard Isotop"
+    ],
+    "post-install-cmd": "composer config-set",
+    "post-update-cmd": "composer config-set"
+  }
 }

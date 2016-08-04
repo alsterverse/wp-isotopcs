@@ -4,10 +4,7 @@
  * Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff.
  *
  * Verifies that new lines after start and end is only one.
- *
- * @author Fredrik Forsmo <fredrik.forsmo@isotop.se>
  */
-
 class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_CodeSniffer_Sniff {
 
 	/**
@@ -207,5 +204,4 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 			}
 		}
 	}
-
 }

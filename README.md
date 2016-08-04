@@ -9,45 +9,19 @@ The coding standard used for WordPress sites.
 Standards are provided as a [Composer](http://getcomposer.org) package and can be installed with:
 
 ```bash
-composer create-project isotopsweden/isotopcs:dev-master --repository-url http://composer.omg.isotop.ad
+composer create-project isotopsweden/isotopcs:dev-master
 ```
 
 Composer will automatically install dependencies, register standards paths, and set default PHP Code Sniffer standard to `Isotop`.
 
 ### As dependency
 
-You should add Isotop composer repository to your composer config file.
+You should update `minimum-stability` to `dev` and set `prefer-stable` to `true`.
 
 ```json
 {
-    "repositories": [
-      {
-        "type": "composer",
-         "url": "http://composer.omg.isotop.ad"
-      }
-    ]
-}
-```
-
-Or use a `vcs` repository if you like to access it outside Isotops network.
-
-```json
-{
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:isotopsweden/isotopcs.git"
-        }
-    ],
-}
-```
-
-And you should update `minimum-stability` to `dev` and set `prefer-stable` to `true`.
-
-```json
-{
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
 ```
 
@@ -73,10 +47,10 @@ vendor/bin/phpcs --extensions=php /path/to/folder/
 
 ```javascript
 {
-    "phpcs_executable_path": "/path/to/isotopcs/vendor/bin/phpcs",
-    "phpcs_additional_args": {
-        "--standard": "Isotop"
-    }
+  "phpcs_executable_path": "/path/to/isotopcs/vendor/bin/phpcs",
+  "phpcs_additional_args": {
+    "--standard": "Isotop"
+  }
 }
 ```
 
