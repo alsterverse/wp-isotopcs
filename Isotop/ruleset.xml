@@ -36,9 +36,6 @@
 		<!-- Prevent errors for Spaces after closing braces, as we want a newline -->
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 
-		<!-- We should probably want to turn the below rules on, but these give issues with the current code base. -->
-		<exclude name="WordPress.XSS.EscapeOutput" /><!-- This sniff also has known & reported bugs -->
-
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions" />
 
@@ -86,5 +83,4 @@
 		<!-- Comment should not be required in param. -->
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
 	</rule>
-
 </ruleset>
