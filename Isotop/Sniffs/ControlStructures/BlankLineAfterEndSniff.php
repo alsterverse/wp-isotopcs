@@ -83,8 +83,8 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 				return;
 			}
 		} else {
-			$scopeOpener = $tokens[ $stackPtr ]['scope_opener'];
-			$scopeCloser = $tokens[ $stackPtr ]['scope_closer'];
+			$scopeOpener = isset( $tokens[ $stackPtr ]['scope_opener'] ) ? $tokens[ $stackPtr ]['scope_opener'] : null;
+			$scopeCloser = isset( $tokens[ $stackPtr ]['scope_closer'] ) ? $tokens[ $stackPtr ]['scope_closer'] : null;
 		}
 
 		$firstContent = $phpcsFile->findNext( T_WHITESPACE, ( $scopeOpener + 1 ), null, true );
