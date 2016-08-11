@@ -82,5 +82,7 @@
 
     <!-- Comment should not be required in param. -->
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+
+    <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing" />
   </rule>
 </ruleset>
