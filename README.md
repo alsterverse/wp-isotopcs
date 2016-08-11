@@ -39,9 +39,9 @@ vendor/bin/phpcs --extensions=php /path/to/folder/
 
 ### Editors
 
-### Atom
+#### Atom
 
-> TODO
+Use [linter-phpcs](https://tommcfarlin.com/using-php-codesniffer/).
 
 #### Sublime
 
