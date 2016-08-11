@@ -83,6 +83,10 @@
     <!-- Comment should not be required in param. -->
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
 
+    <!-- Exclude scalar type hint since it's bugging. -->
     <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing" />
+
+    <!-- Exclude file comment wrong style, to allow all styles. -->
+    <exclude name="Squiz.Commenting.FileComment.WrongStyle" />
   </rule>
 </ruleset>
