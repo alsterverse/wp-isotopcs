@@ -41,13 +41,7 @@
 
     <!-- Using elseif is not nice or mix WPCS and PSR2. -->
     <exclude name="PSR2" /><!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/544 -->
-
-    <!-- Replaces WP XSS Escape output sniff with our that accepts translation functions -->
-    <exclude name="WordPress.XSS.EscapeOutput" />
   </rule>
-
-  <!-- Include Isotops modified WP XSS Escape output sniff that accepts translation functions. -->
-  <rule ref="Isotop.XSS.EscapeOutput" />
 
   <!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
   <rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
