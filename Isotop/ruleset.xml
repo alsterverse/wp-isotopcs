@@ -1,86 +1,100 @@
 <?php xml version="1.0"?>
 <ruleset name="Isotop">
-	<description>Isotop WordPress coding standard</description>
+  <description>Isotop WordPress coding standard</description>
 
-	<!-- Base rule is based on WordPress Extra. -->
-	<rule ref="WordPress-Extra">
-		<!-- Allow empty lines that can make the code beautify -->
-		<exclude name="PEAR.Functions.FunctionCallSignature.EmptyLine" />
+  <!-- Base rule is based on WordPress Extra. -->
+  <rule ref="WordPress-Extra">
+    <!-- Allow empty lines that can make the code beautify -->
+    <exclude name="PEAR.Functions.FunctionCallSignature.EmptyLine" />
 
-		<!-- Demanding space in array declaration is stupid. -->
-		<exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
-		<exclude name="WordPress.Arrays.ArrayDeclaration" />
+    <!-- Demanding space in array declaration is stupid. -->
+    <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
+    <exclude name="WordPress.Arrays.ArrayDeclaration" />
 
-		<!-- Demanding after opening control structure -->
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterStructureOpen" />
+    <!-- Demanding after opening control structure -->
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterStructureOpen" />
 
-		<!-- Demanding space before : in if statement is stupid. -->
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBetweenStructureColon" />
+    <!-- Demanding space before : in if statement is stupid. -->
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBetweenStructureColon" />
 
-		<!-- We should probably want to turn the below rules on, but these give issues with the current code base. -->
-		<!-- Example: "use Frozzare\Tank\Container" is not allowed and should be allowed -->
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
+    <!-- We should probably want to turn the below rules on, but these give issues with the current code base. -->
+    <!-- Example: "use Frozzare\Tank\Container" is not allowed and should be allowed -->
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
 
-		<!-- Prevent errors for space before open parenthesis. -->
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.SpaceBeforeClosureOpenParenthesis" />
+    <!-- Prevent errors for space before open parenthesis. -->
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.SpaceBeforeClosureOpenParenthesis" />
 
-		<!-- Prevent errors for expected 1 space after keywords -->
-		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword" />
+    <!-- Prevent errors for expected 1 space after keywords -->
+    <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword" />
 
-		<!-- Prevent errors for expected 1 space after closing parenthesis. -->
-		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis" />
+    <!-- Prevent errors for expected 1 space after closing parenthesis. -->
+    <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis" />
 
-		<!-- Allow blank line after end of control structure spacing. -->
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.BlankLineAfterEnd" />
+    <!-- Allow blank line after end of control structure spacing. -->
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.BlankLineAfterEnd" />
 
-		<!-- Prevent errors for Spaces after closing braces, as we want a newline -->
-		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
+    <!-- Prevent errors for Spaces after closing braces, as we want a newline -->
+    <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 
-		<!-- Demanding Yoda conditions is stupid. -->
-		<exclude name="WordPress.PHP.YodaConditions" />
+    <!-- Demanding Yoda conditions is stupid. -->
+    <exclude name="WordPress.PHP.YodaConditions" />
 
-		<!-- Using elseif is not nice or mix WPCS and PSR2. -->
-		<exclude name="PSR2" /><!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/544 -->
-	</rule>
+    <!-- Using elseif is not nice or mix WPCS and PSR2. -->
+    <exclude name="PSR2" /><!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/544 -->
+  </rule>
 
-	<!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
-	<rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
+  <!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
+  <rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
 
-	<!-- Don't allow long array syntax. -->
-	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+  <!-- Don't allow long array syntax. -->
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
-	<!-- Require space before operator. -->
-	<rule ref="Squiz.WhiteSpace.OperatorSpacing" />
+  <!-- Require space before operator. -->
+  <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
 
-	<rule ref="WordPress-Docs">
-		<!-- File comment should not be required. -->
-		<exclude name="Squiz.Commenting.FileComment.Missing" />
+  <rule ref="WordPress-Docs">
+    <!-- File comment should not be required. -->
+    <exclude name="Squiz.Commenting.FileComment.Missing" />
 
-		<!-- Class comment should not be required. -->
-		<exclude name="Squiz.Commenting.ClassComment.Missing" />
+    <!-- Class comment should not be required. -->
+    <exclude name="Squiz.Commenting.ClassComment.Missing" />
 
-		<!-- Package should not be required. -->
-		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+    <!-- Package should not be required. -->
+    <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
 
-		<!-- Conflicts with ClassComment if enabled -->
-		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
+    <!-- Conflicts with ClassComment if enabled -->
+    <exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
 
-		<!-- Exclude spacing after open since we don't require file comments -->
-		<exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen" />
+    <!-- Exclude spacing after open since we don't require file comments -->
+    <exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen" />
 
-		<!-- No line between comment and code is required. -->
-		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore" />
+    <!-- No line between comment and code is required. -->
+    <exclude name="Squiz.Commenting.ClassComment.SpacingBefore" />
 
-		<!-- Catches way too many things, like vars and file headers. -->
-		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+    <!-- Catches way too many things, like vars and file headers. -->
+    <exclude name="Generic.Commenting.DocComment.MissingShort" />
 
-		<!-- Allow comments without ending period. -->
-		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+    <!-- Allow comments without ending period. -->
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
 
-		<!-- Allow blank line after a inline comment. -->
-		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
+    <!-- Allow blank line after a inline comment. -->
+    <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
 
-		<!-- Comment should not be required in param. -->
-		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
-	</rule>
+    <!-- Comment should not be required in param. -->
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+  </rule>
+
+  <!-- Consider translations safe -->
+  <rule ref="WordPress.XSS.EscapeOutput">
+    <properties>
+      <property name="customEscapingFunctions" value="__" type="array" />
+      <property name="customEscapingFunctions" value="_e" type="array" />
+      <property name="customEscapingFunctions" value="_x" type="array" />
+      <property name="customEscapingFunctions" value="_ex" type="array" />
+      <property name="customEscapingFunctions" value="_n" type="array" />
+      <property name="customEscapingFunctions" value="_n_noop" type="array" />
+      <property name="customEscapingFunctions" value="_nx" type="array" />
+      <property name="customEscapingFunctions" value="_nx_noop" type="array" />
+    </properties>
+  </rule>
 </ruleset>
