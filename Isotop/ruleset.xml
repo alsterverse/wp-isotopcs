@@ -41,7 +41,13 @@
 
     <!-- Using elseif is not nice or mix WPCS and PSR2. -->
     <exclude name="PSR2" /><!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/544 -->
+
+    <!-- Replaces WP XSS Escape output sniff with our that accepts translation functions -->
+    <exclude name="WordPress.XSS.EscapeOutput" />
   </rule>
+
+  <!-- Include Isotops modified WP XSS Escape output sniff that accepts translation functions. -->
+  <rule ref="Isotop.XSS.EscapeOutput" />
 
   <!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
   <rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
@@ -82,19 +88,5 @@
 
     <!-- Comment should not be required in param. -->
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
-  </rule>
-
-  <!-- Consider translations safe -->
-  <rule ref="WordPress.XSS.EscapeOutput">
-    <properties>
-      <property name="customEscapingFunctions" value="__" type="array" />
-      <property name="customEscapingFunctions" value="_e" type="array" />
-      <property name="customEscapingFunctions" value="_x" type="array" />
-      <property name="customEscapingFunctions" value="_ex" type="array" />
-      <property name="customEscapingFunctions" value="_n" type="array" />
-      <property name="customEscapingFunctions" value="_n_noop" type="array" />
-      <property name="customEscapingFunctions" value="_nx" type="array" />
-      <property name="customEscapingFunctions" value="_nx_noop" type="array" />
-    </properties>
   </rule>
 </ruleset>
