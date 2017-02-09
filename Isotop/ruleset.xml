@@ -88,5 +88,8 @@
 
     <!-- Exclude file comment wrong style, to allow all styles. -->
     <exclude name="Squiz.Commenting.FileComment.WrongStyle" />
+    
+    <!-- Exclude multiple assignments. -->
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
   </rule>
 </ruleset>
