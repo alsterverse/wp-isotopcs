@@ -2,6 +2,13 @@
 <ruleset name="Isotop">
   <description>Isotop WordPress coding standard</description>
 
+  <!-- Allow file and url call methods -->
+  <rule ref="WordPress.WP.AlternativeFunctions">
+    <properties>
+      <property name="exclude" value="curl,file_system_read,file_get_contents" />
+    </properties>
+  </rule>
+
   <!-- Base rule is based on WordPress Extra. -->
   <rule ref="WordPress-Extra">
     <!-- Allow empty lines that can make the code beautify -->
