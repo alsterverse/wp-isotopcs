@@ -39,6 +39,12 @@
     <!-- Demanding Yoda conditions is stupid. -->
     <exclude name="WordPress.PHP.YodaConditions" />
 
+    <!-- Demanding translator comments is stupid. -->
+    <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+
+    <!-- Demanding "class-"" filenames is stupid. -->
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+
     <!-- Using elseif is not nice or mix WPCS and PSR2. -->
     <exclude name="PSR2" /><!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/544 -->
   </rule>
@@ -88,7 +94,7 @@
 
     <!-- Exclude file comment wrong style, to allow all styles. -->
     <exclude name="Squiz.Commenting.FileComment.WrongStyle" />
-    
+
     <!-- Exclude multiple assignments. -->
     <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
   </rule>
