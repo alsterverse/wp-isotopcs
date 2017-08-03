@@ -14,6 +14,10 @@
     <!-- Allow empty lines that can make the code beautify -->
     <exclude name="PEAR.Functions.FunctionCallSignature.EmptyLine" />
 
+    <!-- Rule is only excluded for the sniffer in WPCS, we want it excluded everywhere -->
+    <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
+    <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
+
     <!-- Demanding space in array declaration is stupid. -->
     <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
     <exclude name="WordPress.Arrays.ArrayDeclaration" />
