@@ -50,6 +50,9 @@
     <!-- Demanding Yoda conditions is stupid. -->
     <exclude name="WordPress.PHP.YodaConditions" />
 
+    <!-- Allow trigger_error since we're using Sentry -->
+    <exclude name="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error" />
+
     <!-- Demanding translator comments is stupid. -->
     <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
 
