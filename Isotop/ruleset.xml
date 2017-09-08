@@ -66,6 +66,10 @@
   <!-- Don't allow long array syntax. -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
+  <!-- Don't allow shorthand open tag. -->
+  <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+  <rule ref="Generic.PHP.DisallowAlternativePHPTags"/>
+
   <!-- Require space before operator. -->
   <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
 
