@@ -115,5 +115,8 @@
 
     <!-- Exclude multiple assignments. -->
     <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
+    
+    <!-- Exclude parenthesis requirements when instantiating a new object. -->
+    <exclude name="WordPress.Classes.ClassInstantiation.MissingParenthesis" />
   </rule>
 </ruleset>
