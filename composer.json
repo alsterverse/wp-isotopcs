@@ -1,6 +1,8 @@
 {
   "name": "isotopsweden/isotopcs",
   "description": "Isotop WordPress Coding Standard",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "keywords": [
     "phpcs",
     "standards",
