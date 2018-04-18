@@ -118,5 +118,8 @@
     
     <!-- Exclude parenthesis requirements when instantiating a new object. -->
     <exclude name="WordPress.Classes.ClassInstantiation.MissingParenthesis" />
+
+    <!-- Exclude assignment in condition. -->
+    <exclude name="WordPress.CodeAnalysis.AssignmentInCondition.Found" />
   </rule>
 </ruleset>
