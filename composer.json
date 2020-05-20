@@ -19,14 +19,7 @@
   ],
   "license": "MIT",
   "require": {
-    "wp-coding-standards/wpcs": "~0.14.0"
-  },
-  "scripts": {
-    "config-set": [
-      "\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs",
-      "\"vendor/bin/phpcs\" --config-set default_standard Isotop"
-    ],
-    "post-install-cmd": "composer config-set",
-    "post-update-cmd": "composer config-set"
+    "wp-coding-standards/wpcs": "~0.14.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2"
   }
 }
