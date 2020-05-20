@@ -3,6 +3,7 @@
   "description": "Isotop WordPress Coding Standard",
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "type": "phpcodesniffer-standard",
   "keywords": [
     "phpcs",
     "standards",
