@@ -5,7 +5,7 @@
  *
  * Verifies that new lines after start and end is only one.
  */
-class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_CodeSniffer_Sniff {
+class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_CodeSniffer\Sniffs\Sniff {
 
 	/**
 	 * A list of tokenizers this sniff supports.
@@ -50,10 +50,10 @@ class Isotop_Sniffs_ControlStructures_BlankLineAfterEndSniff implements PHP_Code
 	/**
 	 * Processes this test, when one of its tokens is encountered.
 	 *
-	 * @param  PHP_CodeSniffer_File $phpcsFile
+	 * @param  PHP_CodeSniffer\Files\File $phpcsFile
 	 * @param  int                  $stackPtr
 	 */
-	public function process( PHP_CodeSniffer_File $phpcsFile, $stackPtr ) {
+	public function process( PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr ) {
 		$tokens = $phpcsFile->getTokens();
 
 		if ( $tokens[( $stackPtr + 1 )]['code'] !== T_WHITESPACE
