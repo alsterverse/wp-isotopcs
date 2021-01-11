@@ -63,7 +63,7 @@
   </rule>
 
   <!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
-
+ <rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
 
   <!-- Don't allow long array syntax. -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
