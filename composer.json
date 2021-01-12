@@ -1,25 +1,25 @@
 {
-  "name": "isotopsweden/isotopcs",
-  "description": "Isotop WordPress Coding Standard",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "type": "phpcodesniffer-standard",
-  "keywords": [
-    "phpcs",
-    "standards",
-    "wordpress"
-  ],
-  "authors": [
-    {
-      "name": "Fredrik Forsmo",
-      "email": "fredrik.forsmo@isotop.se",
-      "homepage": "https://github.com/frozzare",
-      "role": "Developer"
+    "name": "isotopsweden/isotopcs",
+    "description": "Isotop WordPress Coding Standard",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "type": "phpcodesniffer-standard",
+    "keywords": [
+        "phpcs",
+        "standards",
+        "wordpress"
+    ],
+    "authors": [
+        {
+            "name": "Fredrik Forsmo",
+            "email": "fredrik.forsmo@isotop.se",
+            "homepage": "https://github.com/frozzare",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "wp-coding-standards/wpcs": "~2.3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
     }
-  ],
-  "license": "MIT",
-  "require": {
-    "wp-coding-standards/wpcs": "~0.14.0",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
-  }
 }

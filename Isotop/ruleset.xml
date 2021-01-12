@@ -20,7 +20,6 @@
 
     <!-- Demanding space in array declaration is stupid. -->
     <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
-    <exclude name="WordPress.Arrays.ArrayDeclaration" />
 
     <!-- Demanding after opening control structure -->
     <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterStructureOpen" />
@@ -64,7 +63,7 @@
   </rule>
 
   <!-- Include Isotops modified BlankLineAfterEnd sniffer that allows only one blank line. -->
-  <rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
+ <rule ref="Isotop.ControlStructures.BlankLineAfterEnd" />
 
   <!-- Don't allow long array syntax. -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
