@@ -19,7 +19,7 @@
     ],
     "license": "MIT",
     "require": {
-        "wp-coding-standards/wpcs": "~2.3.0",
+        "wp-coding-standards/wpcs": "~3.0.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
     }
 }
